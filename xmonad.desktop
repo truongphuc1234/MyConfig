@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=Xmonad
+Comment=WM By Xmonad
+Exec=env DE=xfce my-xmonad
+Terminal=false
+StartupNotify=false
+Type=Application;
