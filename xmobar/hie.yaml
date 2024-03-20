@@ -1,0 +1,22 @@
+cradle:
+  stack:
+    - path: "./src"
+      component: "my-xmobar:lib"
+
+    - path: "././xmobar.hs"
+      component: "my-xmobar:exe:my-xmobar"
+
+    - path: "xmobar/src"
+      component: "xmobar:lib"
+
+    - path: "xmobar/app/Main.hs"
+      component: "xmobar:exe:xmobar"
+
+    - path: "xmobar/src"
+      component: "xmobar:test:XmobarTest"
+
+    - path: "xmobar/test"
+      component: "xmobar:test:XmobarTest"
+
+    - path: "xmobar/bench/main.hs"
+      component: "xmobar:bench:xmobarbench"

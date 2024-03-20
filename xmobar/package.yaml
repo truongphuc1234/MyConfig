@@ -1,0 +1,34 @@
+---
+name: my-xmobar
+
+description: My xmobar Configuration
+
+dependencies:
+    - base >= 4.7 && < 5
+    - xmobar
+    - netlink
+
+ghc-options:
+    - -Wall
+    - -Wcompat
+    - -Wincomplete-record-updates
+    - -Wincomplete-uni-patterns
+    - -Wredundant-constraints
+
+library:
+    source-dirs: src
+
+executable:
+    main: xmobar.hs
+    other-modules: []
+    ghc-options:
+        - -i
+        - -ilib
+        - -v0
+        - -O2
+        - -threaded
+        - -rtsopts
+        - -with-rtsopts=-N
+        - -Wall
+    dependencies:
+        - my-xmobar

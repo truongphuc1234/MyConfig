@@ -1,0 +1,4 @@
+set font "FiraCode Nerd Font 10"
+
+set default-bg "#303446"
+set default-fg "#c6d0f5"

@@ -1,0 +1,32 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.36.0.
+--
+-- see: https://github.com/sol/hpack
+
+name:           my-xmobar
+version:        0.0.0
+description:    My xmobar Configuration
+build-type:     Simple
+
+library
+  other-modules:
+      Paths_my_xmobar
+  hs-source-dirs:
+      src
+  ghc-options: -Wall -Wcompat -Wincomplete-record-updates -Wincomplete-uni-patterns -Wredundant-constraints
+  build-depends:
+      base >=4.7 && <5
+    , netlink
+    , xmobar
+  default-language: Haskell2010
+
+executable my-xmobar
+  main-is: xmobar.hs
+  ghc-options: -Wall -Wcompat -Wincomplete-record-updates -Wincomplete-uni-patterns -Wredundant-constraints -i -ilib -v0 -O2 -threaded -rtsopts -with-rtsopts=-N -Wall
+  build-depends:
+      base >=4.7 && <5
+    , my-xmobar
+    , netlink
+    , xmobar
+  default-language: Haskell2010

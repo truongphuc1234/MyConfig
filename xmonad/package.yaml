@@ -1,0 +1,34 @@
+---
+name: my-xmonad
+
+description: My xmonad Configuration
+
+dependencies:
+    - base >= 4.7 && < 5
+    - xmonad
+    - xmonad-contrib
+
+ghc-options:
+    - -Wall
+    - -Wcompat
+    - -Wincomplete-record-updates
+    - -Wincomplete-uni-patterns
+    - -Wredundant-constraints
+
+library:
+    source-dirs: src
+
+executable:
+    main: xmonad.hs
+    other-modules: []
+    ghc-options:
+        - -i
+        - -ilib
+        - -v0
+        - -O2
+        - -threaded
+        - -rtsopts
+        - -with-rtsopts=-N
+        - -Wall
+    dependencies:
+        - my-xmonad
