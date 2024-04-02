@@ -1,0 +1,19 @@
+[language-server]
+csharp-ls = { command = "csharp-ls" }
+pylsp = { command = "pylsp" }
+
+[[language]]
+name = "c-sharp"
+scope = "source.csharp"
+injection-regex = "c-?sharp"
+file-types = ["cs", "csx", "cake"]
+roots = ["sln", "csproj"]
+comment-token = "//"
+indent = { tab-width = 4, unit = "\t" }
+language-servers = [ "csharp-ls" ]
+auto-format = true
+
+[language.formatter]
+command = "dotnet"
+args = ["csharpier"]
+
