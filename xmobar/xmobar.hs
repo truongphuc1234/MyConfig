@@ -83,13 +83,14 @@ runDate = Run $ Date "%D %a %T" "date" 10
 config :: Config
 config =
   defaultConfig
-    { font = "FiraCode Nerd Font SemiBold 10",
+    { font = "Iosevka Bold 10",
       alpha = 255,
       bgColor = base,
-      fgColor = maroon,
+      fgColor = teal,
+      sepChar = "%",
       alignSep = "}{",
-      commands = [Run XMonadLog, runDate, runBattery],
-      template = "%XMonadLog%}{ %date% | %battery%"
+      commands = [Run (XPropertyLog "_XMONAD_LOG_1"), runDate, runBattery],
+      template = "%_XMONAD_LOG_1%}{ %date% | %battery%"
     }
 
 main :: IO ()
