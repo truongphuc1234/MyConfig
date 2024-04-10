@@ -5,6 +5,7 @@ import XMonad.Hooks.StatusBar (defToggleStrutsKey, statusBarProp, withEasySB)
 import XMonad.Layout.Decoration (ModifiedLayout)
 import XMonad.Layout.Magnifier (Magnifier, magnifiercz')
 import XMonad.Layout.Spacing
+import XMonad.Layout.Spiral
 import XMonad.Layout.ThreeColumns
 import XMonad.Util.EZConfig
 import XMonad.Util.Loggers
@@ -32,20 +33,21 @@ main =
                               , ("M-f", spawn "firefox")
                               ]
 
-customLayout :: ModifiedLayout Spacing (Choose Tall (Choose (Mirror Tall) (Choose Full (ModifiedLayout Magnifier ThreeCol)))) a
-customLayout = smartSpacing 4 $ tiled ||| Mirror tiled ||| Full ||| threeCol
+customLayout :: ModifiedLayout Spacing (Choose Tall (Choose (Mirror Tall) (Choose Full (Choose (ModifiedLayout Magnifier ThreeCol) SpiralWithDir)))) a
+customLayout = smartSpacing 4 $ tiled ||| Mirror tiled ||| Full ||| threeCol ||| spr
   where
     threeCol = magnifiercz' 1.3 $ ThreeColMid nmaster delta ratio
     tiled = Tall nmaster delta ratio
     nmaster = 1
     ratio = 1 / 2
     delta = 3 / 100
+    spr = spiral (6 / 7)
 
 customXmobarPP :: PP
 customXmobarPP =
     def
         { ppSep = "."
-        , ppTitleSanitize = xmobarStrip
+        , ppTitleSanitize = xmobarColor mauve "" . xmobarStrip
         , ppHidden = xmobarColor mauve "" . wrap " " ""
         , ppCurrent = wrap " " "" . xmobarBorder "Top" teal 2
         , ppHiddenNoWindows = xmobarColor sky "" . wrap " " ""
