@@ -5,7 +5,7 @@ cabal-version: 1.12
 -- see: https://github.com/sol/hpack
 
 name:           my-xmobar
-version:        0.0.0
+version:        1.0.0
 description:    My xmobar Configuration
 build-type:     Simple
 
@@ -13,7 +13,7 @@ library
   other-modules:
       Paths_my_xmobar
   hs-source-dirs:
-      src
+      ./
   ghc-options: -Wall -Wcompat -Wincomplete-record-updates -Wincomplete-uni-patterns -Wredundant-constraints
   build-depends:
       base >=4.7 && <5

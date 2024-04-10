@@ -1,5 +1,6 @@
 ---
 name: my-xmonad
+version: '1.0.0'
 
 description: My xmonad Configuration
 
@@ -16,7 +17,7 @@ ghc-options:
     - -Wredundant-constraints
 
 library:
-    source-dirs: src
+    source-dirs: .
 
 executable:
     main: xmonad.hs
