@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-cp -r ./zathura ./alacritty ~/.config
+cp -r ./zathura ./alacritty ./helix ~/.config 
 
 cd ./xmonad && stack install
 cd ../

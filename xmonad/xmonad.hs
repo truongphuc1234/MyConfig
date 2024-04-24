@@ -22,9 +22,9 @@ main =
             { modMask = mod4Mask
             , terminal = "alacritty"
             , layoutHook = customLayout
-            , normalBorderColor = lavender
-            , focusedBorderColor = peach
-            , borderWidth = 2
+            , normalBorderColor = overlay2
+            , focusedBorderColor = mauve
+            , borderWidth = 4
             , startupHook = customStartupHooks
             , focusFollowsMouse = False
             }

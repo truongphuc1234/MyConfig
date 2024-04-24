@@ -1,8 +1,11 @@
-theme="bogster"
+theme="kanagawa"
 
 [editor]
 mouse = false
 true-color = true
+middle-click-paste = false
+cursorline = true
+cursorcolumn = true
 
 [editor.cursor-shape]
 insert = "bar"
@@ -16,3 +19,6 @@ display-messages = true
 render = false
 character = "▏" # Some characters that work well: "▏", "┆", "┊", "⸽"
 skip-levels = 1
+
+[editor.soft-wrap] 
+enable = true
