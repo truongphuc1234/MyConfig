@@ -59,7 +59,7 @@ customXmobarPP :: PP
 customXmobarPP =
   def
     { ppSep = " . ",
-      ppTitleSanitize = xmobarColor sky "" . xmobarStrip,
+      ppTitleSanitize = xmobarColor sky "" . shorten 30,
       ppHidden = xmobarColor green "" . wrap " " "",
       ppCurrent = wrap " " "" . xmobarBorder "Bottom" teal 2,
       ppHiddenNoWindows = xmobarColor lavender "" . wrap " " "",

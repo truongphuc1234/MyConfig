@@ -61,7 +61,7 @@ runBattery =
         "--low",
         red,
         "--normal",
-        peach,
+        green,
         "--high",
         teal,
         "--", -- battery specific options
@@ -80,6 +80,42 @@ runBattery =
 runDate :: Runnable
 runDate = Run $ Date "%D %a %T" "date" 10
 
+runMemory :: Runnable
+runMemory =
+  Run $
+    Memory
+      [ "-t",
+        "<usedratio>"
+      ]
+      10
+
+runWeather :: Runnable
+runWeather =
+  Run $
+    Weather
+      "VVDN"
+      [ "-t",
+        "VVDN: <tempC>°C",
+        "-L",
+        "20",
+        "-H",
+        "35",
+        "--normal",
+        yellow,
+        "--high",
+        red,
+        "--low",
+        blue
+      ]
+      36000
+
+runNetwork :: Runnable
+runNetwork = Run $ Wireless "wlp1s0" ["-t", "<essid> <quality>"] 10
+
+runAlsa :: Runnable
+runAlsa = Run $ Alsa "default" "Master" []
+
+
 config :: Config
 config =
   defaultConfig
@@ -89,8 +125,8 @@ config =
       fgColor = teal,
       sepChar = "%",
       alignSep = "}{",
-      commands = [Run (XPropertyLog "_XMONAD_LOG_1"), runDate, runBattery],
-      template = "%_XMONAD_LOG_1%}{ %date% | %battery%"
+      commands = [Run (XPropertyLog "_XMONAD_LOG_1"), runDate, runBattery, runMemory, runWeather, runNetwork, runAlsa ],
+      template = "%_XMONAD_LOG_1%}{ %alsa:default:Master% . %wlp1s0wi% . %memory% . %VVDN% . %date% . %battery%"
     }
 
 main :: IO ()

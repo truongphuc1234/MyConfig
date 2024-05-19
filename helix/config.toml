@@ -1,11 +1,9 @@
-theme="catppuccin_macchiato"
+theme="gruvbox_dark_hard"
 
 [editor]
 mouse = false
 true-color = true
 middle-click-paste = false
-cursorline = true
-cursorcolumn = true
 
 [editor.cursor-shape]
 insert = "bar"
